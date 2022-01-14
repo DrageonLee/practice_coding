@@ -28,28 +28,30 @@
 
 # 6개의 문서(A, B, C, D, E, F)가 인쇄 대기목록에 있고 중요도가 1 1 9 1 1 1 이므로 C D E F A B 순으로 인쇄합니다.
 # '''
-# #1st 방법
-# #location의 구조를 원형식으로 설정
 
-# def solution(priorities, location):
-#     answer = 0                                      #answer는 0부터 시작
-#     while priorities[location]:                     #priorities[location]이 있는 동안 while 문
-#         if priorities[0] == max(priorities):        #만약 priorities의 맨앞이 가장 큰 경우
-#             if location == 0:                       #priorities의 맨앞이 지정해 놓은 location일 경우
-#                 answer +=1                          #이 경우 answer은 1이 커짐. 만약 첫번째로 해당 location인 수가 나와도 1번째이기 때문
-#                 break                               #여기서 break를 통해 끝남
-#             else :                                  #location인 수가 첫번째가 아닐 경우
-#                 priorities.pop(0)                   #맨 첫번째 수를 출력한 것으로 보고 사라지게함
-#                 answer +=1                          #이 때도 answer +1 함으로 횟수 추가
-#         else :                                      #priorities[0]이 priorities 내 최대값이 아닐 경우
-#             priorities.append(priorities.pop(0))    #맨처음 수를 pop해서 맨 뒤로 보냄
-#         location = (location-1)%len(priorities)     #앞의 경우를 거치면서 location은 1씩 줄어들 것이므로 하지만 0다음은 list 내 제일 큰 수가 되어야 하기 때문에 roof를 돌게 함
-#     return answer                                   #answer 값 return
 
-# print(solution([1,1,9,1,1,1,1],5))
+#1st 방법
+#location의 구조를 원형식으로 설정
 
-# #2nd 방법
-# #any(), enumerate() 사용
+def solution(priorities, location):
+    answer = 0                                      #answer는 0부터 시작
+    while priorities[location]:                     #priorities[location]이 있는 동안 while 문
+        if priorities[0] == max(priorities):        #만약 priorities의 맨앞이 가장 큰 경우
+            if location == 0:                       #priorities의 맨앞이 지정해 놓은 location일 경우
+                answer +=1                          #이 경우 answer은 1이 커짐. 만약 첫번째로 해당 location인 수가 나와도 1번째이기 때문
+                break                               #여기서 break를 통해 끝남
+            else :                                  #location인 수가 첫번째가 아닐 경우
+                priorities.pop(0)                   #맨 첫번째 수를 출력한 것으로 보고 사라지게함
+                answer +=1                          #이 때도 answer +1 함으로 횟수 추가
+        else :                                      #priorities[0]이 priorities 내 최대값이 아닐 경우
+            priorities.append(priorities.pop(0))    #맨처음 수를 pop해서 맨 뒤로 보냄
+        location = (location-1)%len(priorities)     #앞의 경우를 거치면서 location은 1씩 줄어들 것이므로 하지만 0다음은 list 내 제일 큰 수가 되어야 하기 때문에 roof를 돌게 함
+    return answer                                   #answer 값 return
+
+print(solution([1,1,9,1,1,1,1],5))
+
+#2nd 방법
+#any(), enumerate() 사용
 
 def solution(priorities, location):
     list =  [(i,p) for i,p in enumerate(priorities)]
