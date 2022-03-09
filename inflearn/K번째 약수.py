@@ -1,3 +1,5 @@
+# 내 문제 풀이(list 사용)
+
 # N, K = map(int, input().split())
 
 # def devisor(N, K):
@@ -12,6 +14,7 @@
 
 # print(devisor(N, K))
 
+#해답 문제풀이(count 사용, 함수 사용 X)
 N, K = map(int, input().split())
 
 # count = 0
@@ -24,6 +27,7 @@ N, K = map(int, input().split())
 # else :
 #     print(-1)
 
+#해답 문제풀이(count 사용, 함수 사용)
 def devisor(N, K):
     count = 0
     for i in range(1, K+1):
