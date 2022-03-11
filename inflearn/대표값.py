@@ -10,7 +10,7 @@ N명의 학생의 수학점수가 주어집니다. N명의 학생들의 평균(�
 첫줄에 평균과 평균에 가장 가까운 학생의 번호를 출력한다. 평균은 소수 첫째 자리에서 반올림합니다.
 '''
 
-
+#enumerate 사용
 import sys
 sys.stdin = open("/Users/yonggeonlee/Desktop/development/drageon/practice_coding/inflearn/input.txt", "rt")
 
@@ -31,3 +31,22 @@ for index, i in enumerate(scores):
             result = index+1
 
 print(average, result)
+
+#enumerate 사용 X
+N = int(input())
+scores = list(map(int, input().split()))
+average = round(sum(scores)/N + 0.5)
+min = float('inf')
+
+for i in range(N):
+    tmp = abs(scores[i] - average)
+    if tmp < min:
+        min = tmp
+        score = scores[i]
+        index = i+1
+    elif tmp==min:
+        if scores[i] > score:
+            score = scores[i]
+            index = i+1
+
+print(average, index)
