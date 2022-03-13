@@ -11,29 +11,29 @@ N개의 자연수가 입력되면 각 자연수를 뒤집은 후 그 뒤집은 �
 '''
 
 #내 문제 풀이
-# import sys
-# sys.stdin = open("/Users/yonggeonlee/Desktop/development/drageon/practice_coding/inflearn/input.txt", "rt")
+import sys
+sys.stdin = open("/Users/yonggeonlee/Desktop/development/drageon/practice_coding/inflearn/input.txt", "rt")
 
-# N = int(input())
-# number_list = list(map(int, input().split()))
+N = int(input())
+number_list = list(map(int, input().split()))
 
-# def reverse(x):
-#     x = str(x)
-#     reverse_x = int(x[len(x)::-1])
-#     return reverse_x
+def reverse(x):
+    x = str(x)
+    reverse_x = int(x[len(x)::-1])
+    return reverse_x
 
-# def isPrime(x):
-#     cnt = 0
-#     for i in range(1, x+1):
-#         if x%i==0:
-#             cnt +=1
-#     if cnt == 2:
-#         return x
+def isPrime(x):
+    cnt = 0
+    for i in range(1, x+1):
+        if x%i==0:
+            cnt +=1
+    if cnt == 2:
+        return x
 
-# for i in number_list:
-#     rev = reverse(i)
-#     if isPrime(rev):
-#         print(isPrime(rev), end=' ')
+for i in number_list:
+    rev = reverse(i)
+    if isPrime(rev):
+        print(isPrime(rev), end=' ')
 
 # 다른 문제 풀이
 import sys
