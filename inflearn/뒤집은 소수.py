@@ -25,25 +25,25 @@ def reverse(x):
 def isPrime(x):
     cnt = 0
     for i in range(1, x+1):
-        if x%i==0:
+        if x%i==0:                                                           
             cnt +=1
     if cnt == 2:
         return x
-
-for i in number_list:
-    rev = reverse(i)
+                                                                                                                                                                                                                                                                        
+for i in number_list:      
+    rev = reverse(i)          
     if isPrime(rev):
-        print(isPrime(rev), end=' ')
-
-# 다른 문제 풀이
+        print(isPrime(rev), end=' ')    
+                                                                                                                                                                       
+# 다른 문제풀이                                                
 import sys
 sys.stdin = open("/Users/yonggeonlee/Desktop/development/drageon/practice_coding/inflearn/input.txt", "rt")
-
+                   
 N = int(input())
-number_list = list(map(int, input().split()))
+number_list = list(map(int, input().split()))      
 
 def reverse(x):
-    res = 0
+    res = 0      
     while x>0:
         t = x%10
         res = res*10+t
