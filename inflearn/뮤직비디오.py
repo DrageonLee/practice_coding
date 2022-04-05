@@ -67,7 +67,7 @@ def Count(capacity) :
 maxx = max(size_list)
 while l<=r :
     avg = (l+r)//2
-    if avg >= maxx and divide(avg) <= M :       #여기 avg >= maxx 넣어 줘야 M이 9인 경우도 잡아낼 수 있음
+    if avg >= maxx and Count(avg) <= M :       #여기 avg >= maxx 넣어 줘야 M이 9인 경우도 잡아낼 수 있음
         res = avg
         r = avg-1
     else :
