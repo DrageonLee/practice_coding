@@ -8,7 +8,6 @@
 첫째 줄에 최대 사용할 수 있는 회의 수를 출력하여라.
 '''
 
-
 #내 문제 풀이
 import sys
 sys.stdin = open('/Users/yonggeonlee/Desktop/development/drageon/practice_coding/inflearn/input.txt', 'rt')
